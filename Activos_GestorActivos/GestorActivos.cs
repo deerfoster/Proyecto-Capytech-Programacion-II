@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ModuloActivoFinanciero
+namespace Activos_GestorActivos
 {
     internal class GestorActivos
     {
