@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace InventarioIT
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [JsonDerivedType(typeof(ServidorProduccion), typeDiscriminator: "Produccion")]
+    [JsonDerivedType(typeof(ServidorBaseDatos), typeDiscriminator: "BaseDatos")]
+    [JsonDerivedType(typeof(EstacionTrabajo), typeDiscriminator: "EstacionTrabajo")]
     public abstract class ActivoIT
     {
         public string Id { get; set; }
